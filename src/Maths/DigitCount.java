@@ -5,11 +5,7 @@ class DigitCount{
 
   }
   static int CountDigits(int num){
-    int count = 0;
-    while (num>0){
-      num = num/10;
-      count++;
-    }
-    return count;
+   int count = Math.log10(num)+1;
+     return count;
   }
 }
