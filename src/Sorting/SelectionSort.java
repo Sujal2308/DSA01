@@ -1,13 +1,13 @@
 import java.util.Arrays;
-class InsertionSort{
+class SelectionSort{
   public static void main(String[] args){
     int[] arr = {5,3,4,1,2};
     // Inplace sorting algorithm
     // time complexity = O(n^2)
-    insertionSort(arr);
+    selectionSort(arr);
   }
 
-  static void insertionSort(int[] arr){
+  static void selectionSort(int[] arr){
     for(int i = 0 ; i<=arr.length-2 ; i++){
       int min = i;
       for(int j = i+1 ; j<=arr.length-1 ; j++){
