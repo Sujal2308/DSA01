@@ -8,6 +8,8 @@ class RemoveDuplicates{
   }
 
   static int removeIdenticals(int[] arr){
+    // using list (extra space)
+    // T.C = 0(n)
     ArrayList<Integer> list = new ArrayList<>();
     for(int i = 0 ; i<arr.length;i++){
       if(!list.contains(arr[i])){
