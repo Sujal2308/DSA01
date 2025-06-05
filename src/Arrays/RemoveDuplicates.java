@@ -2,20 +2,20 @@ import java.util.ArrayList;
 
 class RemoveDuplicates{
   public static void main(String[] a){
-    int[] arr = {1,1,3,4,5,5,6,6,6,2};
+    // CONDITION : Array must be sorted with duplicate items
+    int[] arr = {1,1,3,4,5,5,6};
     int uniqueItems = removeIdenticals(arr);
     System.out.println(uniqueItems);
   }
 
   static int removeIdenticals(int[] arr){
-    // using list (extra space)
-    // T.C = 0(n)
-    ArrayList<Integer> list = new ArrayList<>();
-    for(int i = 0 ; i<arr.length;i++){
-      if(!list.contains(arr[i])){
-        list.add(arr[i]);
+    int i = 0;
+    for(int j = i+1 ; j<arr.length ; j++){
+      if(arr[i]!= arr[j]){
+        arr[i+1] = arr[j];
+        i++;
       }
     }
-    return list.size();
+    return i+1;
   }
 }
