@@ -1,0 +1,5 @@
+1) Prime Number check karne ke liye hum loop ko n-1 tak nahi chalate he balki hum usko
+bus SquareRoot(n) tak chalate he
+Reason : Suppose n = 50;
+if i = 2 then 2*25 = 50 so do I need to check for 25 also? No, so there is no need to run
+the loop upto 25 also.
