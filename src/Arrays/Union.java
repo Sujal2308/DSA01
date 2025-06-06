@@ -6,6 +6,7 @@ class Union{
     System.out.println(union(arr1,arr2));
   }
 static ArrayList<Integer> union(int[] nums1,int[] nums2){
+  // Unions contains all unique elements from both arrays (no duplicates)
     ArrayList<Integer> list = new ArrayList<>();
     addItems(list,nums1);
     addItems(list,nums2);
