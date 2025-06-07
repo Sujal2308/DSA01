@@ -18,9 +18,7 @@ class LeftRotation{
     return arr;
   }
   static void reverse(int[] arr , int l , int h){
-    if(l<h){
-      int mid = (l+h)/2;
-      while(l<=mid){
+      while(l<h){
         int temp = arr[l];
         arr[l] = arr[h];
         arr[h] = temp;
@@ -29,5 +27,4 @@ class LeftRotation{
       }
     }
   
-  }
 }
