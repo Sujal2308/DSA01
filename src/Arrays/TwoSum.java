@@ -7,21 +7,24 @@ class TwoSum{
   }
 
   static int[] twoSum(int[] arr , int target){
-    // Brute force approach
-    // Time complexity : O(n^2)
-    // Space complexity : O(1)
-    int[] demoArr = new int[2];
-    int sum = 0;
-    for(int i = 0 ; i<arr.length ; i++){
-      for(int j = i+1 ; j<arr.length ; j++){
-        sum = arr[i] + arr[j];
-        if(sum == target){
-          demoArr[0] = i;
-          demoArr[1] = j;
-          return demoArr;
-        }
-      }
+    // Time complexity : O(nlogn)
+    // Space complexity : O(1);
+    Arrays.sort(arr); // T.c : O(nlogn)
+       int low = 0 ;
+       int  high = arr.length-1;
+       int sum = 0;
+       while(low<high){ // T.c : O(n) less dominant
+           sum = arr[low] + arr[high];
+           if(sum==target){
+               return new int[]{low ,high};
+           }
+           else if(sum>target){
+               high--;
+           }
+           else{
+               low++;
+           }
+       }
+       return new int[]{-1,-1};
     }
-  return new int[]{-1,-1};
-  }
 }
