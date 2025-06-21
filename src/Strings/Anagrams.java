@@ -1,11 +1,14 @@
 import java.util.*;
 class Anagrams{
+  // Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
     public static void main(String[] args){
         String s1 = "listen";
         String s2 = "silent";
         System.out.println(isAnagram(s1,s2));
     }
   public static boolean isAnagram(String s, String t) {
+      //Time Complexity: O(nlogn)
+      //Space Complexity: O(n)
       char[] c = s.toCharArray();
       char[] c2 = t.toCharArray();
       if (c.length != c2.length) {
