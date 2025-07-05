@@ -1,4 +1,5 @@
 class LowerBound{
+  // Lower Bound is the first index of the element in the array which is greater than or equal to the target element.
   public static void main(String[] args){
     int[] arr = {1,2,2,3};
     System.out.println(lowerBound(arr, 2));
