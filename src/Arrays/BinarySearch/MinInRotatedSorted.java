@@ -1,4 +1,7 @@
 class MinInRotatedSorted{
+  // leetcode 153
+  // Time Complexity: O(logn)
+  // Space Complexity: O(1)
     public static void main(String[] args){
         int[] arr = {11,13,15,17};
         System.out.println(findMin(arr));
