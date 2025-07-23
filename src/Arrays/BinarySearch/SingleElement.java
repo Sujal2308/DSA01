@@ -20,5 +20,12 @@ class SingleElement{
 
       }
       return nums[nums.length-1];
+
+      // using xor
+      // int xor = 0;
+      // for (int num : nums) {
+      //     xor ^= num;
+      // }
+      // return xor;
     }
 }
