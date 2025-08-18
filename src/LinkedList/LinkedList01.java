@@ -3,11 +3,11 @@ class LinkedList01 {
   public static void main(String[] args) {
     // Create a new instance of our custom linked list
     CustomLL ll1 = new CustomLL();
-    
+
     // Insert element at the beginning of the list
     // List after this operation: 5 -> null
     ll1.insertFirst(5);
-    
+
     // These insertFirst operations are commented out
     // If uncommented, they would add elements at the beginning
     // Order would be: 2 -> 3 -> 4 -> 5 -> null (newest first)
@@ -37,7 +37,7 @@ class LinkedList01 {
     // Display the current state of the linked list
     // Output: 5 -> 1 -> 2 -> 3 -> 4 -> 10 -> null
     ll1.display();
-    
+
     // Print the current size of the linked list
     // Output: 6 (total number of elements)
     System.out.println(ll1.size);
@@ -45,7 +45,7 @@ class LinkedList01 {
     // Remove the last element from the list
     // List after deleteLast(): 5 -> 1 -> 2 -> 3 -> 4 -> null
     ll1.deleteLast();
-    
+
     // These deleteLast operations are commented out
     // If uncommented, they would remove more elements from the end
     // ll1.deleteLast();
