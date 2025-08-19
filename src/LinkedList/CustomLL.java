@@ -120,21 +120,21 @@ public class CustomLL {
   // Delete element at a specific index
   // Time Complexity: O(n) - may need to traverse to the index
   // Note: This method has a bug - it doesn't properly update links
-  public void deleteAt(int index) {
-    Node temp = head;
+  public void deleteAt(int index){
+      if(index==0){
+          deleteFirst();
+          return;
+      }
+      if(index==size-1){
+          deleteLast();
+          return;
+      }
+      Node temp = head;
+      for(int i = 1; i<index; i++){
+          temp = temp.next; //2
+      }
+      temp.next = temp.next.next;
 
-    // Traverse to the node before the one to be deleted
-    while (index > 1) {
-      temp = temp.next;
-      index--;
-    }
-
-    // Bug: This line doesn't actually delete the node
-    // It should be: temp.next = temp.next.next;
-    // Current implementation just moves temp pointer
-    temp = temp.next;
-
-    // Missing: size-- to update the size counter
   }
 
   // Get the data value of the tail (last) element
