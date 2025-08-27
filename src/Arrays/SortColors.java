@@ -1,5 +1,10 @@
 class SortColors{
 
+  // Sort Colors
+  // Time Complexity: O(n)
+  // Space Complexity: O(1)
+  // Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
+
     public static void main(String[] args){
         int[] arr = {2,0,2,1,1,0};
         sortColors(arr);
