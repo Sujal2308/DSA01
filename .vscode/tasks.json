@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile & Run Java (current file)",
+      "type": "shell",
+      "command": "javac \"${file}\"; if ($?) { java ${fileBasenameNoExtension} }",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
