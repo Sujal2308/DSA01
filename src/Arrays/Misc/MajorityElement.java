@@ -1,5 +1,7 @@
+package Arrays.Misc;
+
 class MajorityElement {
-  // Moore voting algo
+  // ! Moore voting algo
   public static void main(String[] args) {
     int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8 };
     System.out.println(majorityElement(arr));
@@ -10,17 +12,21 @@ class MajorityElement {
     // Arrays.sort(nums);
     // return nums[nums.length/2];
 
-    int count = 0;
-    int initial = nums[0];
-    for (int i = 0; i < nums.length; i++) {
-      if (count == 0) {
-        initial = nums[i];
-        count = 1;
-      } else if (nums[i] == initial) {
-        count++;
-      } else
-        count--;
+    int el = 0;
+    int cnt = 0;
+
+    for (int i : nums) {
+      if (cnt == 0) {
+        el = i;
+      }
+      if (i == el) {
+        cnt++;
+      } else {
+        cnt--;
+      }
+
     }
+    return el;
     // int counter = 0;
     // for(int i = 0 ; i<nums.length ;i++){
     // if(nums[i]==initial){
@@ -32,6 +38,5 @@ class MajorityElement {
     // }
     // return -1;
 
-    return initial;
   }
 }
