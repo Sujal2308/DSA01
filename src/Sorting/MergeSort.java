@@ -1,49 +1,52 @@
+package Sorting;
+
 import java.util.*;
 
 class MergeSort {
   public static void main(String[] args) {
-    int[] arr = { 10, 3, 4, 2, -1, 0, 100 };
-    MS(arr, 0, arr.length - 1);
+    int[] arr = { 3, 1, 4, 2, 5, 0 };
+    divide(arr, 0, arr.length - 1);
+    System.out.println(Arrays.toString(arr));
   }
 
-  static void MS(int[] arr, int low, int high) {
-    int mid = (low + high) / 2;
+  static void divide(int[] arr, int low, int high) {
+    // 0 1 2 3
     if (low >= high) {
       return;
     }
-    MS(arr, low, mid);
-    MS(arr, mid + 1, high);
+    int mid = (low + high) / 2;
+    divide(arr, low, mid);
+    divide(arr, mid + 1, high);
     merge(arr, low, mid, high);
-
   }
 
-  static void merge(int[] arr, int low, int mid, int high) {
-    ArrayList<Integer> list = new ArrayList<>();
-    int left = low;
-    int right = mid + 1;
-
-    while (left <= mid && right <= high) {
-      if (arr[left] >= arr[right]) {
-        list.add(arr[right]);
-        right++;
+  public static void merge(int[] arr, int low, int mid, int high) {
+    int i = low;
+    int j = mid + 1;
+    ArrayList<Integer> temp = new ArrayList<>();
+    while (i <= mid && j <= high) {
+      if (arr[i] <= arr[j]) {
+        temp.add(arr[i]);
+        i++;
       } else {
-        list.add(arr[left]);
-        left++;
+        temp.add(arr[j]);
+        j++;
       }
     }
 
-    while (left <= mid) {
-      list.add(arr[left]);
-      left++;
+    while (i <= mid) {
+      temp.add(arr[i]);
+      i++;
     }
-    while (right <= high) {
-      list.add(arr[right]);
-      right++;
+    while (j <= high) {
+      temp.add(arr[j]);
+      j++;
     }
 
-    for (int i = low; i <= high; i++) {
-      arr[i] = list.get(i - low);
+    for (int k = 0; k < temp.size(); k++) {
+      arr[low] = temp.get(k);
+      low++;
     }
-    System.out.println(Arrays.toString(arr));
+
   }
 }
